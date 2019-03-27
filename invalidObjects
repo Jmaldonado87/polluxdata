@@ -1,0 +1,13 @@
+select owner, object_type, count(*) 
+from  dba_objects 
+where status='INVALID' 
+group by owner, object_type,status 
+order by 1,2;
+
+OWNER                                    OBJECT_TYPE               COUNT(*)
+---------------------------------------- ----------------------- ----------
+ENTERPRISE                               PROCEDURE                        3
+GENEVA_ADMIN                             PACKAGE BODY                     1
+GENEVA_ADMIN                             PROCEDURE                        4
+PUBLIC                                   SYNONYM                          1
+RBM_CUSTOM                               PACKAGE BODY                     1
